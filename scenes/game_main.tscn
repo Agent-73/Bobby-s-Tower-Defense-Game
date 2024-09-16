@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqv6oy7byvtex"]
+[gd_scene load_steps=7 format=3 uid="uid://cqv6oy7byvtex"]
 
 [ext_resource type="Texture2D" uid="uid://bcqqwmc2vixq6" path="res://16x16_Jerom_CC-BY-SA-3.0.png" id="1_xgcfs"]
+[ext_resource type="PackedScene" uid="uid://bxn5cg00bm1o3" path="res://scenes/enemies.tscn" id="2_ly3t6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0g7dy"]
 texture = ExtResource("1_xgcfs")
@@ -288,6 +289,18 @@ texture = ExtResource("1_xgcfs")
 [sub_resource type="TileSet" id="TileSet_cc83h"]
 sources/0 = SubResource("TileSetAtlasSource_0g7dy")
 
+[sub_resource type="Curve2D" id="Curve2D_j2pow"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 22, 0, 0, 0, 0, 119, 24, 0, 0, 0, 0, 119, 69, 0, 0, 0, 0, 183, 71, 0, 0, 0, 0, 183, 182, 0, 0, 0, 0, 152, 184, 0, 0, 0, 0, 151, 151, 0, 0, 0, 0, 120, 151, 0, 0, 0, 0, 119, 239)
+}
+point_count = 9
+
+[sub_resource type="Curve2D" id="Curve2D_wbblf"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1, 22, 0, 0, 0, 0, 119, 22, 0, 0, 0, 0, 119, 70, 0, 0, 0, 0, 40, 70, 0, 0, 0, 0, 40, 87, 0, 0, 0, 0, 23, 86, 0, 0, 0, 0, 22, 151, 0, 0, 0, 0, 55, 150, 0, 0, 0, 0, 56, 182, 0, 0, 0, 0, 22, 182, 0, 0, 0, 0, 24, 216, 0, 0, 0, 0, 117, 214, 0, 0, 0, 0, 117, 239)
+}
+point_count = 13
+
 [node name="Game Main" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -299,3 +312,16 @@ layer_0/tile_data = PackedInt32Array(0, 196608, 6, 65536, 327680, 1, 131072, 0, 
 position = Vector2(120, 120)
 scale = Vector2(-3.16, 1)
 zoom = Vector2(2.7, 2.7)
+
+[node name="PathSpawner" type="Node2D" parent="."]
+position = Vector2(1, 0)
+
+[node name="EnemyPathRight" type="Path2D" parent="."]
+curve = SubResource("Curve2D_j2pow")
+
+[node name="WeakEnemy" parent="EnemyPathRight" instance=ExtResource("2_ly3t6")]
+
+[node name="EnemyPathLeft" type="Path2D" parent="."]
+curve = SubResource("Curve2D_wbblf")
+
+[node name="WeakEnemy" parent="EnemyPathLeft" instance=ExtResource("2_ly3t6")]

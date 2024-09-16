@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://bxn5cg00bm1o3"]
+[gd_scene load_steps=3 format=3 uid="uid://bxn5cg00bm1o3"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://bcqqwmc2vixq6" path="res://16x16_Jerom_CC-BY-SA-3.0.png" id="1_1j6u7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8x3ak"]
+
+[node name="Weak Enemy" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8x3ak")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1j6u7")
+region_enabled = true
+region_rect = Rect2(1.02612, 352.756, 14.3659, 14.3239)
