@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cqv6oy7byvtex"]
 
 [ext_resource type="Texture2D" uid="uid://bcqqwmc2vixq6" path="res://16x16_Jerom_CC-BY-SA-3.0.png" id="1_xgcfs"]
-[ext_resource type="PackedScene" uid="uid://bxn5cg00bm1o3" path="res://scenes/enemies.tscn" id="2_ly3t6"]
+[ext_resource type="PackedScene" uid="uid://bxn5cg00bm1o3" path="res://Mobs/weak_enemy.tscn" id="2_ly3t6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0g7dy"]
 texture = ExtResource("1_xgcfs")
@@ -320,8 +320,10 @@ position = Vector2(1, 0)
 curve = SubResource("Curve2D_j2pow")
 
 [node name="WeakEnemy" parent="EnemyPathRight" instance=ExtResource("2_ly3t6")]
+position = Vector2(0, 23)
 
 [node name="EnemyPathLeft" type="Path2D" parent="."]
 curve = SubResource("Curve2D_wbblf")
 
 [node name="WeakEnemy" parent="EnemyPathLeft" instance=ExtResource("2_ly3t6")]
+position = Vector2(0, 23)
