@@ -1,16 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://2uqrq1hk0h53"]
+[gd_scene load_steps=4 format=3 uid="uid://2uqrq1hk0h53"]
 
 [ext_resource type="Texture2D" uid="uid://bcqqwmc2vixq6" path="res://16x16_Jerom_CC-BY-SA-3.0.png" id="1_qkpbc"]
+[ext_resource type="Script" path="res://medium_enemy.gd" id="1_rdd25"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kx0ll"]
 radius = 8.0
 
-[node name="Medium Enemy" type="CharacterBody2D"]
+[node name="Medium Enemy" type="PathFollow2D"]
+rotates = false
+script = ExtResource("1_rdd25")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_kx0ll")
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 texture = ExtResource("1_qkpbc")
 region_enabled = true
 region_rect = Rect2(17.2957, 352.863, 13.7043, 14.1887)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_kx0ll")

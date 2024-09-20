@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://h80q1sntkw4s"]
+
+[ext_resource type="Script" path="res://fast_enemy.gd" id="1_f4spt"]
+[ext_resource type="Texture2D" uid="uid://bcqqwmc2vixq6" path="res://16x16_Jerom_CC-BY-SA-3.0.png" id="2_1jonv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tobft"]
+radius = 8.0
+
+[node name="Fast Enemy" type="PathFollow2D"]
+rotates = false
+script = ExtResource("1_f4spt")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_1jonv")
+region_enabled = true
+region_rect = Rect2(2.61969, 339, 12.8374, 11.3767)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_tobft")

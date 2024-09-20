@@ -1,7 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqv6oy7byvtex"]
+[gd_scene load_steps=10 format=3 uid="uid://cqv6oy7byvtex"]
 
 [ext_resource type="Texture2D" uid="uid://bcqqwmc2vixq6" path="res://16x16_Jerom_CC-BY-SA-3.0.png" id="1_xgcfs"]
 [ext_resource type="PackedScene" uid="uid://bxn5cg00bm1o3" path="res://Mobs/weak_enemy.tscn" id="2_ly3t6"]
+[ext_resource type="PackedScene" uid="uid://2uqrq1hk0h53" path="res://medium_enemy.tscn" id="3_kt2tq"]
+[ext_resource type="PackedScene" uid="uid://h80q1sntkw4s" path="res://fast_enemy.tscn" id="5_7i0kw"]
+[ext_resource type="PackedScene" uid="uid://dufstewaip7m7" path="res://strong_enemy.tscn" id="5_qr0m5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0g7dy"]
 texture = ExtResource("1_xgcfs")
@@ -319,11 +322,32 @@ position = Vector2(1, 0)
 [node name="EnemyPathRight" type="Path2D" parent="."]
 curve = SubResource("Curve2D_j2pow")
 
-[node name="WeakEnemy" parent="EnemyPathRight" instance=ExtResource("2_ly3t6")]
-position = Vector2(0, 23)
+[node name="Weak Enemy" parent="EnemyPathRight" instance=ExtResource("2_ly3t6")]
+position = Vector2(0, 22)
+rotation = 0.0168051
+
+[node name="Medium Enemy" parent="EnemyPathRight" instance=ExtResource("3_kt2tq")]
+position = Vector2(0, 22)
+rotation = 0.0168051
+
+[node name="Strong Enemy" parent="EnemyPathRight" instance=ExtResource("5_qr0m5")]
+position = Vector2(0, 22)
+rotation = 0.0168051
+
+[node name="Fast Enemy" parent="EnemyPathRight" instance=ExtResource("5_7i0kw")]
+position = Vector2(0, 22)
 
 [node name="EnemyPathLeft" type="Path2D" parent="."]
 curve = SubResource("Curve2D_wbblf")
 
-[node name="WeakEnemy" parent="EnemyPathLeft" instance=ExtResource("2_ly3t6")]
-position = Vector2(0, 23)
+[node name="Weak Enemy" parent="EnemyPathLeft" instance=ExtResource("2_ly3t6")]
+position = Vector2(1, 22)
+
+[node name="Medium Enemy" parent="EnemyPathLeft" instance=ExtResource("3_kt2tq")]
+position = Vector2(1, 22)
+
+[node name="Strong Enemy" parent="EnemyPathLeft" instance=ExtResource("5_qr0m5")]
+position = Vector2(1, 22)
+
+[node name="Fast Enemy" parent="EnemyPathLeft" instance=ExtResource("5_7i0kw")]
+position = Vector2(1, 22)
