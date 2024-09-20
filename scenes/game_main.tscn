@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://cqv6oy7byvtex"]
+[gd_scene load_steps=11 format=3 uid="uid://cqv6oy7byvtex"]
 
+[ext_resource type="Script" path="res://scenes/game_main.gd" id="1_g4enq"]
 [ext_resource type="Texture2D" uid="uid://bcqqwmc2vixq6" path="res://16x16_Jerom_CC-BY-SA-3.0.png" id="1_xgcfs"]
 [ext_resource type="PackedScene" uid="uid://bxn5cg00bm1o3" path="res://Mobs/weak_enemy.tscn" id="2_ly3t6"]
 [ext_resource type="PackedScene" uid="uid://2uqrq1hk0h53" path="res://medium_enemy.tscn" id="3_kt2tq"]
@@ -305,6 +306,7 @@ _data = {
 point_count = 13
 
 [node name="Game Main" type="Node2D"]
+script = ExtResource("1_g4enq")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_cc83h")
