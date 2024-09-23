@@ -1,19 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://dufstewaip7m7"]
 
-[ext_resource type="Texture2D" uid="uid://bcqqwmc2vixq6" path="res://16x16_Jerom_CC-BY-SA-3.0.png" id="1_cj6bs"]
-[ext_resource type="Script" path="res://strong_enemy.gd" id="1_swnbp"]
+[ext_resource type="Script" path="res://Mobs/strong_enemy.gd" id="1_r8lro"]
+[ext_resource type="Texture2D" uid="uid://bcqqwmc2vixq6" path="res://16x16_Jerom_CC-BY-SA-3.0.png" id="2_2sj0g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iucvm"]
 radius = 9.0
 
 [node name="Strong Enemy" type="PathFollow2D"]
 rotates = false
-script = ExtResource("1_swnbp")
+script = ExtResource("1_r8lro")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-texture = ExtResource("1_cj6bs")
+texture = ExtResource("2_2sj0g")
 region_enabled = true
 region_rect = Rect2(128.404, 353.134, 15.242, 14.4857)
 

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://da8jqqklwrism"]
+
+[ext_resource type="Script" path="res://scenes/WaveController.gd" id="1_hnqa7"]
+
+[node name="WaveController" type="Node2D"]
+script = ExtResource("1_hnqa7")
+
+[node name="gapTimer" type="Timer" parent="."]

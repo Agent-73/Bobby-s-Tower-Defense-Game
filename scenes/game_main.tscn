@@ -1,11 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://cqv6oy7byvtex"]
+[gd_scene load_steps=12 format=3 uid="uid://cqv6oy7byvtex"]
 
-[ext_resource type="Script" path="res://scenes/game_main.gd" id="1_g4enq"]
 [ext_resource type="Texture2D" uid="uid://bcqqwmc2vixq6" path="res://16x16_Jerom_CC-BY-SA-3.0.png" id="1_xgcfs"]
 [ext_resource type="PackedScene" uid="uid://bxn5cg00bm1o3" path="res://Mobs/weak_enemy.tscn" id="2_ly3t6"]
-[ext_resource type="PackedScene" uid="uid://2uqrq1hk0h53" path="res://medium_enemy.tscn" id="3_kt2tq"]
-[ext_resource type="PackedScene" uid="uid://h80q1sntkw4s" path="res://fast_enemy.tscn" id="5_7i0kw"]
-[ext_resource type="PackedScene" uid="uid://dufstewaip7m7" path="res://strong_enemy.tscn" id="5_qr0m5"]
+[ext_resource type="PackedScene" uid="uid://2uqrq1hk0h53" path="res://Mobs/medium_enemy.tscn" id="4_xbdwi"]
+[ext_resource type="PackedScene" uid="uid://dufstewaip7m7" path="res://Mobs/strong_enemy.tscn" id="5_eu06t"]
+[ext_resource type="PackedScene" uid="uid://da8jqqklwrism" path="res://scenes/wave_controller.tscn" id="6_aj4j2"]
+[ext_resource type="PackedScene" uid="uid://h80q1sntkw4s" path="res://Mobs/fast_enemy.tscn" id="6_yga53"]
+[ext_resource type="PackedScene" uid="uid://c63exv6w1c8b4" path="res://scenes/enemy_area.tscn" id="7_1nyll"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0g7dy"]
 texture = ExtResource("1_xgcfs")
@@ -306,7 +307,6 @@ _data = {
 point_count = 13
 
 [node name="Game Main" type="Node2D"]
-script = ExtResource("1_g4enq")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_cc83h")
@@ -328,15 +328,15 @@ curve = SubResource("Curve2D_j2pow")
 position = Vector2(0, 22)
 rotation = 0.0168051
 
-[node name="Medium Enemy" parent="EnemyPathRight" instance=ExtResource("3_kt2tq")]
+[node name="Medium Enemy" parent="EnemyPathRight" instance=ExtResource("4_xbdwi")]
 position = Vector2(0, 22)
 rotation = 0.0168051
 
-[node name="Strong Enemy" parent="EnemyPathRight" instance=ExtResource("5_qr0m5")]
+[node name="Strong Enemy" parent="EnemyPathRight" instance=ExtResource("5_eu06t")]
 position = Vector2(0, 22)
 rotation = 0.0168051
 
-[node name="Fast Enemy" parent="EnemyPathRight" instance=ExtResource("5_7i0kw")]
+[node name="Fast Enemy" parent="EnemyPathRight" instance=ExtResource("6_yga53")]
 position = Vector2(0, 22)
 
 [node name="EnemyPathLeft" type="Path2D" parent="."]
@@ -345,11 +345,15 @@ curve = SubResource("Curve2D_wbblf")
 [node name="Weak Enemy" parent="EnemyPathLeft" instance=ExtResource("2_ly3t6")]
 position = Vector2(1, 22)
 
-[node name="Medium Enemy" parent="EnemyPathLeft" instance=ExtResource("3_kt2tq")]
+[node name="Medium Enemy" parent="EnemyPathLeft" instance=ExtResource("4_xbdwi")]
 position = Vector2(1, 22)
 
-[node name="Strong Enemy" parent="EnemyPathLeft" instance=ExtResource("5_qr0m5")]
+[node name="Strong Enemy" parent="EnemyPathLeft" instance=ExtResource("5_eu06t")]
 position = Vector2(1, 22)
 
-[node name="Fast Enemy" parent="EnemyPathLeft" instance=ExtResource("5_7i0kw")]
+[node name="Fast Enemy" parent="EnemyPathLeft" instance=ExtResource("6_yga53")]
 position = Vector2(1, 22)
+
+[node name="WaveController" parent="." instance=ExtResource("6_aj4j2")]
+
+[node name="EnemyArea" parent="." instance=ExtResource("7_1nyll")]
