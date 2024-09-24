@@ -1,11 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://cqv6oy7byvtex"]
+[gd_scene load_steps=8 format=3 uid="uid://cqv6oy7byvtex"]
 
 [ext_resource type="Texture2D" uid="uid://bcqqwmc2vixq6" path="res://16x16_Jerom_CC-BY-SA-3.0.png" id="1_xgcfs"]
-[ext_resource type="PackedScene" uid="uid://bxn5cg00bm1o3" path="res://Mobs/weak_enemy.tscn" id="2_ly3t6"]
-[ext_resource type="PackedScene" uid="uid://2uqrq1hk0h53" path="res://Mobs/medium_enemy.tscn" id="4_xbdwi"]
-[ext_resource type="PackedScene" uid="uid://dufstewaip7m7" path="res://Mobs/strong_enemy.tscn" id="5_eu06t"]
 [ext_resource type="PackedScene" uid="uid://da8jqqklwrism" path="res://scenes/wave_controller.tscn" id="6_aj4j2"]
-[ext_resource type="PackedScene" uid="uid://h80q1sntkw4s" path="res://Mobs/fast_enemy.tscn" id="6_yga53"]
 [ext_resource type="PackedScene" uid="uid://c63exv6w1c8b4" path="res://scenes/enemy_area.tscn" id="7_1nyll"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0g7dy"]
@@ -296,13 +292,13 @@ sources/0 = SubResource("TileSetAtlasSource_0g7dy")
 
 [sub_resource type="Curve2D" id="Curve2D_j2pow"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 22, 0, 0, 0, 0, 119, 24, 0, 0, 0, 0, 119, 69, 0, 0, 0, 0, 183, 71, 0, 0, 0, 0, 183, 182, 0, 0, 0, 0, 152, 184, 0, 0, 0, 0, 151, 151, 0, 0, 0, 0, 120, 151, 0, 0, 0, 0, 119, 239)
+"points": PackedVector2Array(0, 0, 0, 0, -5, 24, 0, 0, 0, 0, 120, 24, 0, 0, 0, 0, 120, 72, 0, 0, 0, 0, 184, 72, 0, 0, 0, 0, 184, 184, 0, 0, 0, 0, 152, 184, 0, 0, 0, 0, 152, 152, 0, 0, 0, 0, 120, 152, 0, 0, 0, 0, 120, 258)
 }
 point_count = 9
 
 [sub_resource type="Curve2D" id="Curve2D_wbblf"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1, 22, 0, 0, 0, 0, 119, 22, 0, 0, 0, 0, 119, 70, 0, 0, 0, 0, 40, 70, 0, 0, 0, 0, 40, 87, 0, 0, 0, 0, 23, 86, 0, 0, 0, 0, 22, 151, 0, 0, 0, 0, 55, 150, 0, 0, 0, 0, 56, 182, 0, 0, 0, 0, 22, 182, 0, 0, 0, 0, 24, 216, 0, 0, 0, 0, 117, 214, 0, 0, 0, 0, 117, 239)
+"points": PackedVector2Array(0, 0, 0, 0, -5, 24, 0, 0, 0, 0, 120, 24, 0, 0, 0, 0, 120, 72, 0, 0, 0, 0, 40, 72, 0, 0, 0, 0, 40, 88, 0, 0, 0, 0, 24, 88, 0, 0, 0, 0, 24, 152, 0, 0, 0, 0, 56, 152, 0, 0, 0, 0, 56, 184, 0, 0, 0, 0, 24, 184, 0, 0, 0, 0, 24, 216, 0, 0, 0, 0, 120, 216, 0, 0, 0, 0, 120, 259)
 }
 point_count = 13
 
@@ -324,35 +320,8 @@ position = Vector2(1, 0)
 [node name="EnemyPathRight" type="Path2D" parent="."]
 curve = SubResource("Curve2D_j2pow")
 
-[node name="Weak Enemy" parent="EnemyPathRight" instance=ExtResource("2_ly3t6")]
-position = Vector2(0, 22)
-rotation = 0.0168051
-
-[node name="Medium Enemy" parent="EnemyPathRight" instance=ExtResource("4_xbdwi")]
-position = Vector2(0, 22)
-rotation = 0.0168051
-
-[node name="Strong Enemy" parent="EnemyPathRight" instance=ExtResource("5_eu06t")]
-position = Vector2(0, 22)
-rotation = 0.0168051
-
-[node name="Fast Enemy" parent="EnemyPathRight" instance=ExtResource("6_yga53")]
-position = Vector2(0, 22)
-
 [node name="EnemyPathLeft" type="Path2D" parent="."]
 curve = SubResource("Curve2D_wbblf")
-
-[node name="Weak Enemy" parent="EnemyPathLeft" instance=ExtResource("2_ly3t6")]
-position = Vector2(1, 22)
-
-[node name="Medium Enemy" parent="EnemyPathLeft" instance=ExtResource("4_xbdwi")]
-position = Vector2(1, 22)
-
-[node name="Strong Enemy" parent="EnemyPathLeft" instance=ExtResource("5_eu06t")]
-position = Vector2(1, 22)
-
-[node name="Fast Enemy" parent="EnemyPathLeft" instance=ExtResource("6_yga53")]
-position = Vector2(1, 22)
 
 [node name="WaveController" parent="." instance=ExtResource("6_aj4j2")]
 

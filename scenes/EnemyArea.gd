@@ -1,7 +1,7 @@
 extends Area2D
 
-@onready var enemy_path_right: Path2D = $EnemyPathRight
-@onready var enemy_path_left: Path2D = $EnemyPathLeft
+@onready var enemy_path_right: Path2D = $"../EnemyPathRight"
+@onready var enemy_path_left: Path2D = $"../EnemyPathLeft"
 
 func _on_body_entered(body:Node2D) -> void:
 	if(body.name == "Enemy"):

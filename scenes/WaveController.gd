@@ -1,6 +1,6 @@
 extends Node2D
-@onready var enemy_path_right = $EnemyPathRight
-@onready var enemy_path_left = $EnemyPathLeft
+@onready var enemy_path_right = $"../EnemyPathRight"
+@onready var enemy_path_left = $"../EnemyPathLeft"
 @onready var gap_timer:Timer = $gapTimer
 
 var weak_enemy = preload("res://Mobs/weak_enemy.tscn")
@@ -19,8 +19,10 @@ func _process(_delta: float) -> void:
 func spawnEnemy(amount,type:PackedScene):
 	for i in amount:
 		var instance = type.instantiate()
-		enemy_path_right.add_child(instance)
-		enemy_path_right.add_child(instance)
+		if randi_range(0,1)==1:
+			enemy_path_right.add_child(instance)
+		else:
+			enemy_path_left.add_child(instance)
 		instance.rotates=false
 		instance.rotation=0
 		gap_timer.start()
@@ -30,15 +32,15 @@ func nextWave():
 	print(waveCount)
 	if waveCount<=5:
 		gap_timer.wait_time=2
-		spawnEnemy(waveCount,weak_enemy)
+		spawnEnemy(waveCount,fast_enemy)
 	elif waveCount <=9:
-		await spawnEnemy(waveCount,weak_enemy)
-		spawnEnemy(waveCount-3,medium_enemy)
+		await spawnEnemy(waveCount,fast_enemy)
+		spawnEnemy(waveCount-3,weak_enemy)
 	elif waveCount == 10:
-		await spawnEnemy(10,medium_enemy)
-		spawnEnemy(1,strong_enemy)
+		await spawnEnemy(10,weak_enemy)
+		spawnEnemy(1,medium_enemy)
 	elif waveCount <=15:
-		spawnEnemy(1,fast_enemy)
+		spawnEnemy(1,strong_enemy)
 	else:
 		print("no more waves, you win!")
 	pass
