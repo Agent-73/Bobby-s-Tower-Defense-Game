@@ -12,6 +12,7 @@ loop = false
 
 [node name="Enemy" type="CharacterBody2D" parent="."]
 script = ExtResource("1_8i7xr")
+speed = 5.0
 health = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemy"]

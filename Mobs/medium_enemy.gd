@@ -1,18 +1,10 @@
-extends PathFollow2D
+extends Enemies
 
-
-@export var speed = 30
-@export var health : int = 5
-@export var damage : int = 4
-
-func takeDamage(amount:int):
-	health-=amount
-	print("ow")
-	if health<=0:
-		queue_free()
-		print("death")
-
-
+	
 func _process(delta):
-	progress+=(speed*delta)
+	super._process(delta)
+	var speed_increase = total_enemies * speed_multiplier
+	speed = 5 + speed_increase
+	
+
 

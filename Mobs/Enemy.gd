@@ -5,6 +5,10 @@ class_name Enemies
 @export var health : int = 3
 @export var damage : int = 3
 @export var speed_multiplier: float = 1.5
+static var total_enemies: int = 0
+
+func _ready():
+	total_enemies +=1
 
 func takeDamage(amount:int):
 	health-=amount
@@ -18,5 +22,6 @@ func _process(delta):
 	get_parent().progress+=(speed * delta * speed_multiplier)
 	if Input.is_action_just_pressed("ui_text_backspace"):
 		takeDamage(1)
-	
+
+
 
