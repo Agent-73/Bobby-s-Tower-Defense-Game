@@ -36,10 +36,11 @@ func nextWave():
 	elif waveCount <=9:
 		await spawnEnemy(waveCount,fast_enemy)
 		spawnEnemy(waveCount-3,weak_enemy)
-	elif waveCount == 10:
-		await spawnEnemy(10,weak_enemy)
-		spawnEnemy(1,medium_enemy)
+	elif waveCount <= 14:
+		await spawnEnemy(waveCount,weak_enemy)
+		spawnEnemy(3,medium_enemy)
 	elif waveCount <=15:
+		await spawnEnemy(waveCount,weak_enemy)
 		spawnEnemy(1,strong_enemy)
 	else:
 		print("no more waves, you win!")

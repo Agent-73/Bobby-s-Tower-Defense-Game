@@ -5,21 +5,23 @@ class_name Enemies
 @export var health : int = 3
 @export var damage : int = 3
 @export var speed_multiplier: float = 1.5
-static var total_enemies: int = 0
+var total_enemies: int = 0
+@onready var enemy_path_right = $"../../../EnemyPathRight"
+@onready var enemy_path_left = $"../../../EnemyPathLeft"
 
-func _ready():
-	total_enemies +=1
 
 func takeDamage(amount:int):
 	health-=amount
 	print("ow")
 	if health<=0:
-		queue_free()
+		get_parent().queue_free()
 		print("death")
 		
 
+
 func _process(delta):
 	get_parent().progress+=(speed * delta * speed_multiplier)
+	total_enemies = (enemy_path_right.get_child_count())+(enemy_path_left.get_child_count())
 	if Input.is_action_just_pressed("ui_text_backspace"):
 		takeDamage(1)
 

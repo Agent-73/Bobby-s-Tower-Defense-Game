@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://2uqrq1hk0h53"]
 
-[ext_resource type="Script" path="res://Mobs/Enemy.gd" id="1_8i7xr"]
+[ext_resource type="Script" path="res://Mobs/medium_enemy.gd" id="1_4he2r"]
 [ext_resource type="Texture2D" uid="uid://bcqqwmc2vixq6" path="res://16x16_Jerom_CC-BY-SA-3.0.png" id="2_mm3ey"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kx0ll"]
@@ -11,9 +11,7 @@ rotates = false
 loop = false
 
 [node name="Enemy" type="CharacterBody2D" parent="."]
-script = ExtResource("1_8i7xr")
-speed = 5.0
-health = 5
+script = ExtResource("1_4he2r")
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemy"]
 texture = ExtResource("2_mm3ey")

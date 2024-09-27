@@ -298,7 +298,7 @@ point_count = 9
 
 [sub_resource type="Curve2D" id="Curve2D_wbblf"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -5, 24, 0, 0, 0, 0, 120, 24, 0, 0, 0, 0, 120, 72, 0, 0, 0, 0, 40, 72, 0, 0, 0, 0, 40, 88, 0, 0, 0, 0, 24, 88, 0, 0, 0, 0, 24, 152, 0, 0, 0, 0, 56, 152, 0, 0, 0, 0, 56, 184, 0, 0, 0, 0, 24, 184, 0, 0, 0, 0, 24, 216, 0, 0, 0, 0, 120, 216, 0, 0, 0, 0, 120, 259)
+"points": PackedVector2Array(0, 0, 0, 0, -5, 24, 0, 0, 0, 0, 120, 24, 0, 0, 0, 0, 120, 72, 0, 0, 0, 0, 40, 72, 0, 0, 0, 0, 40, 88, 0, 0, 0, 0, 24, 88, 0, 0, 0, 0, 24, 152, 0, 0, 0, 0, 56, 152, 0, 0, 0, 0, 56, 184, 0, 0, 0, 0, 24, 184, 0, 0, 0, 0, 24, 216, 0, 0, 0, 0, 120, 216, 0, 0, 0, 0, 120, 258)
 }
 point_count = 13
 
@@ -326,3 +326,4 @@ curve = SubResource("Curve2D_wbblf")
 [node name="WaveController" parent="." instance=ExtResource("6_aj4j2")]
 
 [node name="EnemyArea" parent="." instance=ExtResource("7_1nyll")]
+position = Vector2(120, 258)
