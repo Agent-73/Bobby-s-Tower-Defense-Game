@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bxn5cg00bm1o3"]
 
 [ext_resource type="Texture2D" uid="uid://bcqqwmc2vixq6" path="res://16x16_Jerom_CC-BY-SA-3.0.png" id="1_1j6u7"]
-[ext_resource type="Script" path="res://Mobs/Enemy.gd" id="1_red4h"]
+[ext_resource type="Script" path="res://Mobs/weak2enemy.gd" id="1_l8i4x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8x3ak"]
 
@@ -10,7 +10,8 @@ rotates = false
 loop = false
 
 [node name="Enemy" type="CharacterBody2D" parent="."]
-script = ExtResource("1_red4h")
+script = ExtResource("1_l8i4x")
+damage = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Enemy"]
 texture = ExtResource("1_1j6u7")
