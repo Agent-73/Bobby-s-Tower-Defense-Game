@@ -330,4 +330,4 @@ curve = SubResource("Curve2D_wbblf")
 position = Vector2(120, 258)
 
 [node name="Weak Tower" parent="." instance=ExtResource("4_xkwla")]
-position = Vector2(104, 40)
+position = Vector2(103, 40)

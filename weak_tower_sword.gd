@@ -10,7 +10,7 @@ var startRot
 func _physics_process(delta:float) -> void:
 	
 	if target != null:
-		rotate(get_angle_to(target.global_position))
+		rotate(get_angle_to(target.global_position)+44.8)
 		attackPoint = (target.global_position)-global_position
 		attackPoint.normalized()
 		global_position+=attackPoint*speed*delta

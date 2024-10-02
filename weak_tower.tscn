@@ -11,7 +11,7 @@ radius = 10.0499
 rotation = 0.00460414
 script = ExtResource("1_he3la")
 price = 1
-attackCD = 0.1
+attackCD = 1.5
 projectile = ExtResource("2_p60xh")
 rangeBox = NodePath("Area2D")
 

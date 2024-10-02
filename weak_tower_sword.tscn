@@ -7,7 +7,7 @@
 size = Vector2(18, 18)
 
 [node name="Weak Tower Sword" type="Area2D"]
-rotation = -0.785455
+rotation = 5.49828
 script = ExtResource("1_55uy6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
