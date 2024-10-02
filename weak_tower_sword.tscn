@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2jxgu0s2ofbj"]
+[gd_scene load_steps=4 format=3 uid="uid://b2jxgu0s2ofbj"]
 
+[ext_resource type="Script" path="res://weak_tower_sword.gd" id="1_55uy6"]
 [ext_resource type="Texture2D" uid="uid://bcqqwmc2vixq6" path="res://16x16_Jerom_CC-BY-SA-3.0.png" id="1_aipbw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tf8uh"]
 size = Vector2(18, 18)
 
 [node name="Weak Tower Sword" type="Area2D"]
+rotation = -0.785455
+script = ExtResource("1_55uy6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_aipbw")
@@ -13,5 +16,6 @@ region_enabled = true
 region_rect = Rect2(3, 211, 10, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 1)
 shape = SubResource("RectangleShape2D_tf8uh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

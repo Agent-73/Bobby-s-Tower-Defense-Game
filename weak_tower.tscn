@@ -1,12 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://5uhn8hdotexk"]
+[gd_scene load_steps=5 format=3 uid="uid://5uhn8hdotexk"]
 
-[ext_resource type="Script" path="res://Towers/TowerBase.gd" id="1_krw5f"]
+[ext_resource type="Script" path="res://TowerBase.gd" id="1_he3la"]
 [ext_resource type="Texture2D" uid="uid://bcqqwmc2vixq6" path="res://16x16_Jerom_CC-BY-SA-3.0.png" id="2_4jgg8"]
+[ext_resource type="PackedScene" uid="uid://b2jxgu0s2ofbj" path="res://weak_tower_sword.tscn" id="2_p60xh"]
 
-[node name="Weak Tower" type="Node2D"]
-script = ExtResource("1_krw5f")
+[sub_resource type="CircleShape2D" id="CircleShape2D_18ylr"]
+radius = 10.0499
+
+[node name="Weak Tower" type="Node2D" node_paths=PackedStringArray("rangeBox")]
+rotation = 0.00460414
+script = ExtResource("1_he3la")
+price = 1
+attackCD = 0.1
+projectile = ExtResource("2_p60xh")
+rangeBox = NodePath("Area2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_4jgg8")
 region_enabled = true
 region_rect = Rect2(65, 321, 15, 14)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 0.00433405
+shape = SubResource("CircleShape2D_18ylr")

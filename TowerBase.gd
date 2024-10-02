@@ -25,7 +25,6 @@ func _process(_delta: float)-> void:
 func placeTower():
 	pass
 func fireProj():if inRangeEnemies != []:
-	$Weapom.play("Attack")
 	if inRangeEnemies != []:
 		print("bam!")
 		attackTimer.start()
@@ -33,8 +32,8 @@ func fireProj():if inRangeEnemies != []:
 		get_parent().add_child.call_deferred(instance)
 		instance.damage = damage
 		instance.target = inRangeEnemies[0].get_parent()
-		instance.startPoint = $Weapon.global_position
-		instance.startRot = $Weapon.rotation
+		instance.startPoint = global_position
+		instance.startRot = rotation
 	
 func addtoRange(body:Node2D):
 	if (body is Enemies):
