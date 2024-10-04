@@ -1,6 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqv6oy7byvtex"]
+[gd_scene load_steps=10 format=3 uid="uid://cqv6oy7byvtex"]
 
 [ext_resource type="Texture2D" uid="uid://bcqqwmc2vixq6" path="res://16x16_Jerom_CC-BY-SA-3.0.png" id="1_xgcfs"]
+[ext_resource type="PackedScene" uid="uid://5uhn8hdotexk" path="res://weak_tower.tscn" id="4_xkwla"]
+[ext_resource type="PackedScene" uid="uid://cm6m5w10ryla8" path="res://buttontower.tscn" id="5_lqhyo"]
 [ext_resource type="PackedScene" uid="uid://da8jqqklwrism" path="res://scenes/wave_controller.tscn" id="6_aj4j2"]
 [ext_resource type="PackedScene" uid="uid://c63exv6w1c8b4" path="res://scenes/enemy_area.tscn" id="7_1nyll"]
 
@@ -327,3 +329,12 @@ curve = SubResource("Curve2D_wbblf")
 
 [node name="EnemyArea" parent="." instance=ExtResource("7_1nyll")]
 position = Vector2(120, 258)
+
+[node name="Weak Tower" parent="." instance=ExtResource("4_xkwla")]
+position = Vector2(104, 55)
+
+[node name="Tower Button" parent="." instance=ExtResource("5_lqhyo")]
+offset_left = 211.0
+offset_top = 213.0
+offset_right = 268.0
+offset_bottom = 267.0
