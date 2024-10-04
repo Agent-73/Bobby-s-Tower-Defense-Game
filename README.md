@@ -6,8 +6,8 @@ in a game where it shrinks when taking damage. My goblin/elf like enemy has a sp
 its fellow enemies are alive on the path. The last two are vanilla enemies, one a rat that is fast but low health, 
 and the other is a boss like elf that has a lot of health but moves the slowest. 
 
-	Due to time I only made one tower, at the moment I don't have a completely working game to where it can be 
-placed and you get more per wave. The tower is a little farmer that is trying to protect his town, he shoots little 
+	Due to time I only made one tower, I finished the tower place code meaning that he can be placed anywhere on 
+the map, with more time I would make sure he couldn't be on the path. The tower is a little farmer that is trying to protect his town, he shoots little 
 swords at the enemies. 
 
 	I have a end game screen and working waves. The enemies can take damage when pressing the backspace, and each 

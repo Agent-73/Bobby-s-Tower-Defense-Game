@@ -331,9 +331,9 @@ curve = SubResource("Curve2D_wbblf")
 position = Vector2(120, 258)
 
 [node name="Weak Tower" parent="." instance=ExtResource("4_xkwla")]
-position = Vector2(103, 40)
+position = Vector2(104, 55)
 
-[node name="Node2D" parent="." instance=ExtResource("5_lqhyo")]
+[node name="Tower Button" parent="." instance=ExtResource("5_lqhyo")]
 offset_left = 211.0
 offset_top = 213.0
 offset_right = 268.0

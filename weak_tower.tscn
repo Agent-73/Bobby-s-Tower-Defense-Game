@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b2jxgu0s2ofbj" path="res://weak_tower_sword.tscn" id="2_p60xh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_18ylr"]
-radius = 10.0499
+radius = 16.1245
 
 [node name="Weak Tower" type="Node2D" node_paths=PackedStringArray("rangeBox")]
 rotation = 0.00460414

@@ -7,7 +7,7 @@ class_name Tower
 @export var projectile:PackedScene
 @export var rangeBox: Area2D
 var building
-
+@onready var Tower_Button=$"../Tower Button"
 var inRangeEnemies:Array[CharacterBody2D] = []
 var attackTimer:Timer = Timer.new()
 
@@ -56,3 +56,4 @@ func _physics_process(delta):
 func placeTower():
 	building=false
 	rangeBox.get_child(0).disabled=false
+	Tower_Button.wealth-=1
