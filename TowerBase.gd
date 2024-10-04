@@ -6,6 +6,7 @@ class_name Tower
 @export var attackCD:float=2
 @export var projectile:PackedScene
 @export var rangeBox: Area2D
+var building
 
 var inRangeEnemies:Array[CharacterBody2D] = []
 var attackTimer:Timer = Timer.new()
@@ -21,8 +22,6 @@ func _ready() -> void:
 	attackTimer.timeout.connect(fireProj)
 
 func _process(_delta: float)-> void:
-	pass
-func placeTower():
 	pass
 func fireProj():if inRangeEnemies != []:
 	if inRangeEnemies != []:
@@ -47,4 +46,13 @@ func addtoRange(body:Node2D):
 func removeFromRange(body:Node2D):
 	if(body is Enemies):
 		inRangeEnemies.erase(body)
-		
+
+func _physics_process(delta):
+	if building==true:
+		global_position=get_global_mouse_position()
+		if Input.is_action_just_pressed("left-click"):
+			placeTower()
+
+func placeTower():
+	building=false
+	rangeBox.get_child(0).disabled=false

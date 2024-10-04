@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm6m5w10ryla8"]
+
+[ext_resource type="Script" path="res://towerplace.gd" id="1_d31br"]
+
+[node name="Tower Button" type="Button"]
+offset_right = 57.0
+offset_bottom = 54.0
+scale = Vector2(0.5, 0.5)
+text = "Build
+Tower"
+script = ExtResource("1_d31br")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
